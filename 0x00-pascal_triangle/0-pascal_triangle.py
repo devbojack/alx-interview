@@ -4,6 +4,8 @@ Returns a list of lists of intergers
 representing the Pascal's triangle of n
 or an empty list if (n <= 0)
 """
+
+
 def pascal_triangle(n):
     """
     Pascal triangle list list
