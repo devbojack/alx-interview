@@ -3,16 +3,22 @@
 Determines if all the boxes can be opened
 Returns True or False
 """
+
+
 def canUnlockAll(boxes):
-    len = len(boxes)
-    visited = set()
-    queue = [0]
+    """
+    Determines if all the boxes can be opened
+    """
+    if type(boxes) is not list or not boxes:
+        return False
 
-    while queue:
-        current_box = queue.pop(0)
-        visited.add(current_box)
-        for key in boxes[current_box]:
-            if key < len and key not in visited:
-                queue.append(key)
+    boxLen = len(boxes)
+    unlocked = [0]
+    for box in unlocked:
+        for key in boxes[box]:
+            if key not in unlocked and key < boxLen:
+                unlocked.append(key)
+    if len(unlocked) == boxLen:
+        return True
 
-    return len(visited) == len
+    return False
