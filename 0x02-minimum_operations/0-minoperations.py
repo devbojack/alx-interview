@@ -10,12 +10,14 @@ def minOperations(n):
     if n < 0:
         return 0
 
-    dp = [float('inf')] * (n + 1)
-    dp[1] = 0
+    total_operations = 0
+    evens = 2
 
-    for i in range(2, n + 1):
-        for j in range(1, int(i**0.5) + 1):
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + i // j, dp[i // j] + j)
+    while evens <= n:
+        if n % evens == 0:
+            total_operations += evens
+            n = n / evens
+            evens -= 1
+        evens += 1
 
-    return dp[n] if dp[n] != float('inf') else 0
+    return total_operations
