@@ -4,13 +4,14 @@
 
 def validUTF8(data):
     """
-    Determines if a given data set represents a valid UTF-8 encoding
+    Determines if a given data set represents a valid UTF-8 encoding.
     """
 
     def is_start_of_char(byte):
         return (byte & 0b10000000) == 0b00000000
 
     def is_valid_continuation_bytes(num_bytes):
+        nonlocal data_index
         for _ in range(num_bytes):
             data_index += 1
             if data_index >= len(data) or \
