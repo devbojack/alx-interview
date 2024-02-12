@@ -14,8 +14,8 @@
 - A `README.md` file, at the root of the folder of the project, is mandatory
 - Your code should be `semistandard` compliant. [Rules of Standard](https://intranet.alxswe.com/rltoken/9P3gH5mVdJCEKL87E-IMaA) + [semicolons on top](https://intranet.alxswe.com/rltoken/WjMvQfBMKBdsNUuHyg55Dw). Also as reference: [AirBnB style](https://intranet.alxswe.com/rltoken/Xp81RT-Sfi7uE_kNCSXunw)
 - All your files must be executable
-- The length of your files will be tested using wc
-- You are not allowed to use var
+- The length of your files will be tested using `wc`
+- You are not allowed to use `var`
 
 ## More Info
 ### Install Node 10
