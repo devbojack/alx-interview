@@ -26,15 +26,21 @@ $ sudo apt-get install -y nodejs
 ```
 
 ## Install semi-standard
-Documentation
+[Documentation](https://intranet.alxswe.com/rltoken/WjMvQfBMKBdsNUuHyg55Dw)
 
+```
 $ sudo npm install semistandard --global
-Install request module and use it
-Documentation
+```
 
+## Install request module and use it
+[Documentation](https://intranet.alxswe.com/rltoken/BWz2gc45S-nZaxEY6GA6Zw)
+
+```
 $ sudo npm install request --global
 $ export NODE_PATH=/usr/lib/node_modules
-Tasks
+```
+
+# Tasks
 0. Star Wars Characters
 mandatory
 Write a script that prints all characters of a Star Wars movie:
