@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 // Star wars characters
 
 const util = require('util');
