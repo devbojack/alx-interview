@@ -5,9 +5,7 @@ Change comes from within
 
 
 def makeChange(coins, total):
-    """
-    Make changes
-    """
+    """Make changes"""
     if total <= 0:
         return 0
     dp = [0] + [float("inf")] * (total)
