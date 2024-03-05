@@ -1,16 +1,27 @@
 #!/usr/bin/python3
-"""Change comes from within"""
+"""Make changes within
+"""
 
 
 def makeChange(coins, total):
-    """Make Changes"""
+    """Changes within"""
     if total <= 0:
         return 0
 
-    dp = [0] + [float('inf')] * total
+    # Dictionary to store the minimum number of coins for each amount
+    dp = {}
 
-    for coin in coins:
-        for amount in range(coin, total + 1):
-            dp[amount] = min(dp[amount], dp[amount - coin] + 1)
+    def minCoins(amount):
+        """Min coins"""
+        if amount == 0:
+            return 0
+        if amount < 0:
+            return float('inf')
+        if amount in dp:
+            return dp[amount]
+        min_coins = min(minCoins(amount - coin) + 1 for coin in coins)
+        dp[amount] = min_coins
+        return min_coins
 
-    return dp[total] if dp[total] != float('inf') else -1
+    result = minCoins(total)
+    return result if result != float('inf') else -1
