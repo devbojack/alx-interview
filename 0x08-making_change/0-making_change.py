@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""
-Change comes from within
-"""
+"""Change comes from within"""
 
 
 def makeChange(coins, total):
-    """Make Chnages"""
+    """Make Changes"""
     if total <= 0:
         return 0
 
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
+    dp = [0] + [float('inf')] * total
 
     for coin in coins:
         for amount in range(coin, total + 1):
