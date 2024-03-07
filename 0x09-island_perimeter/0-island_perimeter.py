@@ -3,6 +3,7 @@
 
 
 def island_perimeter(grid):
+    """Island perimeter"""
     perimeter = 0
 
     for i in range(len(grid)):
