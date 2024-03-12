@@ -4,9 +4,9 @@
 
 def findMultiples(num, targets):
     """Finds multiples of a given number
-    within a list and removes them.
+    within a list and removes them
     """
-    for i in targets.copy():
+    for i in targets:
         if i % num == 0:
             targets.remove(i)
     return targets
@@ -17,7 +17,7 @@ def isPrime(i):
     """
     if i == 1:
         return False
-    for j in range(2, int(i**0.5) + 1):
+    for j in range(2, i):
         if i % j == 0:
             return False
     return True
@@ -29,11 +29,13 @@ def findPrimes(n):
     """
     counter = 0
     target = list(n)
-    for i in target.copy():
+    for i in range(1, len(target) + 1):
         if isPrime(i):
             counter += 1
             target.remove(i)
             target = findMultiples(i, target)
+        else:
+            pass
     return counter
 
 
@@ -41,12 +43,16 @@ def isWinner(x, nums):
     """Determines the winner of each round of
     the prime game"""
     players = {'Maria': 0, 'Ben': 0}
+    cluster = set()
     for elem in range(x):
-        cluster = set()
+        nums.sort()
         num = nums[elem]
         for i in range(1, num + 1):
             cluster.add(i)
+            if i == num + 1:
+                break
         temp = findPrimes(cluster)
+
         if temp % 2 == 0:
             players['Ben'] += 1
         elif temp % 2 != 0:
